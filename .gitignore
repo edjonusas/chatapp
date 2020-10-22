@@ -21,3 +21,7 @@ pnpm-debug.log*
 *.njsproj
 *.sln
 *.sw?
+
+# git ignore custom files
+
+src/firebase.js
