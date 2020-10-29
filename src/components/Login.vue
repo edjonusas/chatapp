@@ -1,25 +1,42 @@
 <template>
   <aside>
-    <h3>Sign in Anonymously</h3>
-    <button @click="auth.signInAnonymously()">Sign in</button>
-
     <div v-if="newUser">
       <h3>Sign Up for a new Account</h3>
       <a href="#" @click="newUser = false">Returning user?</a>
+
+      <div class="inputs-block">
+        <input class="input" type="text" placeholder="First Name" />
+        <input class="input" type="text" placeholder="Last Name" />
+        <input class="input" type="text" placeholder="Country" />
+        <input class="input" type="text" placeholder="City" />
+        <select class="input" name="" id="">
+          <option value="">select your gender</option>
+          <option value="">male</option>
+          <option value="">female</option>
+          <option value="">other</option>
+        </select>
+        <input v-model="email" placeholder="email" type="email" class="input" />
+        <input
+          v-model="password"
+          placeholder="password"
+          type="password"
+          class="input"
+        />
+      </div>
     </div>
 
     <div v-else>
       <h3>Sign in with Email</h3>
       <a href="#" @click="newUser = true">New user?</a>
-    </div>
 
-    <input v-model="email" placeholder="email" type="email" class="input" />
-    <input
-      v-model="password"
-      placeholder="password"
-      type="password"
-      class="input"
-    />
+      <input v-model="email" placeholder="email" type="email" class="input" />
+      <input
+        v-model="password"
+        placeholder="password"
+        type="password"
+        class="input"
+      />
+    </div>
 
     <button
       class="button is-info"
@@ -42,6 +59,8 @@ export default {
       newUser: true,
       email: "",
       password: "",
+      firsName: "",
+      LastName: "",
       loading: false,
       errorMessage: "",
     };
